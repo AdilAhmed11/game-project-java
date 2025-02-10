@@ -19,7 +19,8 @@ public class Card {
     // toString method to describe the class
     // Returns a string representation of a card
     public String toString() {
+
         return symbol + suit; // E.g. 4 Hearts, J Clubs, etc
-    }
+    }// end toString method
 
 }

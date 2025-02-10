@@ -8,7 +8,7 @@ public class CardGame {
 
     // Constructor - A special method to initialise objects.
     // Initialising deckOfCards array list AND the populateDeck method below
-    public CardGame(String name) {
+    public CardGame() {
         this.deckOfCards = new ArrayList<>();
         populateDeck(); // Populate the deck when the game is created
     }
@@ -34,6 +34,6 @@ public class CardGame {
     public void getDeck() {
         for(Card card : deckOfCards) {
             System.out.println(card);
-        }
+        }// end getDeck() method
     }
 }
