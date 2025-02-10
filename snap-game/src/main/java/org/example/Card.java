@@ -8,6 +8,9 @@ public class Card {
     // Constructor - A special method to initialise objects.
     public Card(String suit, String symbol, int value) {
         // Initialises the card with a suit, symbol, and value
+        // this. - A reference variable that refers to the current instance of the class.
+        // It is used within an instance method or a constructor to access members of the current object
+        // such as instance variables, methods, and constructors.
         this.suit = suit;
         this.symbol = symbol;
         this.value = value;
