@@ -5,17 +5,20 @@ import java.util.ArrayList;
 public class CardGame {
     // Create the fields for the CardGame class
     private ArrayList<Card> deckOfCards; // Field to store the deck of cards
+    private String name;
+
 
     // Constructor - A special method to initialise objects.
     // Initialising deckOfCards array list AND the populateDeck method below
-    public CardGame() {
+    public CardGame(String name) {
         this.deckOfCards = new ArrayList<>();
+        this.name = name;
         populateDeck(); // Populate the deck when the game is created
     }
 
     // Method to populate the deck
     private void populateDeck() {
-        String[] suits = {"♥", "♦", "♣", "♠"}; // Unicode for suits
+        String[] suits = {"♥", "♦", "♣", "♠"}; // Unicode values for the  suits
         String[] symbols = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
         int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
@@ -36,4 +39,18 @@ public class CardGame {
             System.out.println(card);
         }// end getDeck() method
     }
+
+    // Method to deal card from the top of the deck and return it
+    public Card dealCard() { // Method of class Card call dealCard
+        if(deckOfCards.isEmpty()) { // Dealing with empty deck.
+            System.out.println("The deck is empty");
+            return null;
+        } else {
+            return deckOfCards.removeFirst(); // removeFirst method removes the first element of the collections
+        }
+    }// end dealCard() method
+
+
+
+
 }
