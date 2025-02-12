@@ -16,6 +16,14 @@ public class Card {
         this.value = value;
     }
 
+    public String getSuit() {
+        return suit;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
     // toString method to describe the class
     // Returns a string representation of a card
     public String toString() {
