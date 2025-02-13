@@ -79,9 +79,10 @@ public class CardGame {
         return deckOfCards;
     }
 
-
-
-
+    // Getter for the deck
+    public ArrayList<Card> getDeckOfCards() {
+        return deckOfCards;
+    }
 }
 
 

@@ -16,23 +16,24 @@ public class Card {
         this.value = value;
     }
 
+    // Getters - methods
     public String getSuit() {
         return suit;
-    }
+    }// end getSuit getter method
 
     public String getSymbol() {
         return symbol;
-    }
+    }// end getSymbol getter method
 
     public int getValue() {
         return value;
-    }
+    }// end getValue getter method
 
     // toString method to describe the class
     // Returns a string representation of a card
     public String toString() {
 
-        return symbol + suit; // E.g. 4 Hearts, J Clubs, etc
+        return symbol + " of " + suit; // E.g. 4 of Hearts, J of Clubs, etc
     }// end toString method
 
 }

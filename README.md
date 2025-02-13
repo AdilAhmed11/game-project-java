@@ -89,9 +89,8 @@ The game will be broken down in to the following sections:
 
         -   Call the superclass constructor to initialise the name and deck.
         -   Initialise the playedCards ArrayList.
-
+        
     -   METHOD playGame():
-        -   Shuffle the deck using the shuffleDeck method.
         -   Loop until the game ends:
             -   Wait for the user to press Enter (simulate a turn).
             -   Deal a card using the dealCard method.
