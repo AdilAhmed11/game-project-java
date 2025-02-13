@@ -60,17 +60,17 @@ public class CardGame {
         return deckOfCards;
     }
 
-//    // Method to sort the deck in to suits and return deck
-//    public ArrayList<Card> sortDeckInSuitOrder() {
-//        deckOfCards.sort((card1, card2)) -> {
-//            int suitComparison = card1.getSuit().compareTo(card2.getSuit());
-//            if (suitComparison != 0) {
-//                return suitComparison;
-//            }
-//            return Integer.compare((card1.getValue(), card2.getValue()));
-//        }
-//        return deckOfCards;
-//    }
+    // Method to sort the deck in to suits and return deck
+    public ArrayList<Card> sortDeckIntoSuits() {
+        deckOfCards.sort((card1, card2) -> { // sort by suit first
+            int suitComparison = card1.getSuit().compareTo(card2.getSuit());
+            if (suitComparison != 0) {
+                return suitComparison; // Sort by suit first
+            }
+            return Integer.compare(card1.getValue(), card2.getValue()); // Then sort by value
+        });
+        return deckOfCards;
+    }
 
     // Method to shuffle the deck into a random order
     // https://stackoverflow.com/questions/39557701/shuffle-a-deck-of-cards-in-java
