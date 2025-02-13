@@ -11,88 +11,97 @@ The following are links to the repo and game:
 -   _Repo Link_
 -   _Game Link_
 
+## 💾 Download it to play locally - Instructions
+
+...
+
 ## 🎮 Game Description
 
 ### Game Rules
 
-Rules created by Hasbro: https://www.hasbro.com/common/instruct/Snap.PDF
-
-1.  Setup: The game uses a standard deck of 52 cards. The deck is shuffled and the players receive an equal amount of cards.
-2.  Taking Turns: The players take turns placing cards on a centre pile, one card at a time.
-3.  Snap: If two consecutive cards match in **Suit** (Clubs, Hearts, Spades, Diamonds) or **Rank**, then a player can call snap and collect the pile of cards.
-4.  Winning: The game is played until one player runs out of cards.
-5.  Losing: If a player calls snap incorrectly, then a penalty is incurred - **TO BE DECIDED**.
+1.  Setup: The game uses a standard deck of 52 cards. The deck is shuffled.
+2.  Taking Turns: The players take turns picking a card and placing it in a centre pile.
+3.  Snap: If two consecutive cards match in **Rank** (2, 3, 4, ..., Q, K, A), then the first player to call 'SNAP' wins.
+4.  Losing: If a player calls snap incorrectly, then a penalty is incurred - **TO BE DECIDED**.
 
 ### Main Components
 
 -   Standard deck of 52 cards
 -   Two players
 
-## 💻 Game Implementation
-
-...
-
-## 🔍 Game Breakdown
+## 🔍 Game Breakdown - Pseudocode
 
 The game will be broken down in to the following sections:
 
-1.  Initialisation
+1.  Stage 1 - Create the deck of cards
 
--   Have a short intro block of text for the rules and how to win
--   Create a deck of 52 cards
--   Shuffle the deck
--   Initialise player1's deck as empty
--   Initialise player2's deck as empty
--   Deal the deck to both players, splitting it equally
--   Initialise the centre pile as empty
--   Set gameOver to false
+-   Create a CardGame CLASS
 
-2.  Main Game Loop
+    -   Fields / Variables in the CLASS
+        -   ArrayList<Card> deckOfCards
+        -   String name
+    -   CONSTRUCTOR of name CardGame with one parameter of String name
+        -   Initialise the name attribute.
+        -   Call a method to create and populate the deckOfCards with 52 cards.
+    -   METHOD createDeck()
+        -   Loop through all 4 suits (hearts, clubs, diamonds, spades).
+        -   For each suit, loop through all 13 symbols (2, 3, ..., K, A).
+        -   Create a new Card object with the current suit, symbol, and corresponding value.
+        -   Add the Card object to the deckOfCards ArrayList.
+    -   METHOD getDeck():
+        -   Loop through the deckOfCards ArrayList.
+        -   Print each card using its toString method.
 
--   If it's player1's turn:
-    -   player1 places a card from their deck on the centre pile
-    -   If the card matches the top card of the centre pile:
-        -   player1 checks for snap
-        -   If player1 writes "snap" within 2 seconds:
-            -   player1 wins the round
-            -   player1 adds the centre pile to their deck
-        -   Else:
-            -   player2's (computer's) turn
--   If it's player2's (computer's) turn:
-    -   player2 (computer) places a card from their deck on the centre pile
-    -   If the card matches the top card of the centre pile:
-        -   player2 (computer) checks for snap
-        -   If player2 (computer) **will** write "snap" after 2 seconds:
-            -   player2 (computer) wins the round
-            -   player2 (computer) adds the centre pile to their deck
-        -   Else:
-            player1's turn
+-   Create a Card CLASS
 
-3.  Snap Check
+    -   Fields / Variables in the CLASS
+        -   String suit - use Unicode characters to get the symbols
+        -   String symbol (2, 3, ..., 10, J, Q, K, A)
+        -   int value (2, 3, ..., 13, 14)
+    -   CONSTRUCTOR of name CardGame with one parameter of String name
+        -   Initialise the suit, symbol, and value attributes.
+    -   METHOD toString():
+        -   Return a string describing the card (4 Hearts, 9 Clubs).
 
--   If the top two cards of the center pile are the same:
-    -   player1 has 2 seconds to write "snap" into the command line
-    -   If player1 writes "snap", they win the centre pile
-    -   player2 (computer) will write "snap" after 2 seconds and add the centre pile to their deck
+2.  Stage 2 - Core Functionality
 
-4.  Winning Condition
+-   In the CardGame CLASS
+    -   METHOD dealCard():
+        -   Check if the deckOfCards is not empty - Print a message and return null.
+        -   Remove the first card from the deckOfCards arrayList.
+    -   METHOD sortDeckInNumberOrder():
+        -   Sort the deckOfCards ArrayList by the card's value.
+        -   Return the sorted deck.
+    -   METHOD sortDeckIntoSuits():
+        -   Sort the deckOfCards ArrayList first by suit, then by value.
+        -   Return the sorted deck.
+    -   METHOD shuffleDeck():
+        -   Randomly shuffle the deckOfCards ArrayList.
+        -   Return the shuffled deck.
 
--   If player1 runs out of cards/ deck is empty:
-    -   Set gameOver to true
--   If player2 (computer) runs out of cards/ deck is empty:
+3.  Implement the Snap Game
 
-    -   Set gameOver to true
+-   Create a Snap CLASS that extends CardGame
 
--   When a player has run out of cards, a message will pop up and say "player1/player2 has run out of cards"
+    -   Fields/Variables
+        -   ArrayList<Card> playedCards - to store the card played/dealt.
+    -   CONSTRUCTOR Snap(String name):
 
-5.  End Game
+        -   Call the superclass constructor to initialise the name and deck.
+        -   Initialise the playedCards ArrayList.
 
--   If player1 has more cards:
-    -   Print "Player 1 wins!"
--   If player2 (computer) has more cards:
-    -   Print "Player 2 wins!"
--   If both players have the same number of cards:
-    -   Print "It's a tie!"
+    -   METHOD playGame():
+        -   Shuffle the deck using the shuffleDeck method.
+        -   Loop until the game ends:
+            -   Wait for the user to press Enter (simulate a turn).
+            -   Deal a card using the dealCard method.
+            -   Add the dealt card to the playedCards ArrayList.
+            -   Display the dealt card to the user.
+            -   Check if the last two cards in playedCards have the same symbol:
+                -   If yes, print "Snap! You win!" and end the game.
+                -   If no, continue the loop.
+
+4.  Two-player game with a Timer
 
 ## ⚠️ Challenges Encountered
 
