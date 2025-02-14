@@ -8,18 +8,20 @@ public class CardGame {
     // Create the fields for the CardGame class
     private ArrayList<Card> deckOfCards; // Field to store the deck of cards
     private String name;
+    private int numberOfDecks;
 
 
     // Constructor - A special method to initialise objects.
     // Initialising deckOfCards array list AND the populateDeck method below
-    public CardGame(String name) {
+    public CardGame(String name, int numberOfDecks) {
         this.deckOfCards = new ArrayList<>();
         this.name = name;
-        populateDeck(); // Populate the deck when the game is created
+        this.numberOfDecks = 1;
+//        populateDeck(); // Populate the deck when the game is created
     }
 
     // Method to populate the deck
-    private void populateDeck() {
+    public void populateDeck() {
         String[] suits = {"♥", "♦", "♣", "♠"}; // Unicode values for the  suits
         String[] symbols = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
         int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
@@ -54,7 +56,8 @@ public class CardGame {
 
     // Method to sort the deck in number order and return deck
     public ArrayList<Card> sortDeckInNumberOrder() {
-        deckOfCards.sort(Comparator.comparingInt(card -> card.getValue())); // Lambda functions (parameters) -> {expression or statement}
+        deckOfCards.sort(Comparator.comparingInt(card -> card.getValue())); // Lambda functions (parameters) ->
+        // {expression or statement}
         // A Comparator is an interface in Java. It has one main method called compare.
         // Comparator explanation: https://www.notion.so/Comparators-1980f2333b6e804487cfef17a59b3e1e
         return deckOfCards;

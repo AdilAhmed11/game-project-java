@@ -84,14 +84,14 @@ The game will be broken down in to the following sections:
 -   Create a Snap CLASS that extends CardGame
 
     -   Fields/Variables
-        -   ArrayList<Card> playedCards - to store the card played/dealt.
+        -   Card Variable to store the previously played card
     -   CONSTRUCTOR Snap(String name):
 
         -   Call the superclass constructor to initialise the name and deck.
-        -   Initialise the playedCards ArrayList.
+        -   Shuffle the deck at initialisation.
         
     -   METHOD playGame():
-        -   Loop until the game ends:
+        -   For Loop until the game ends:
             -   Wait for the user to press Enter (simulate a turn).
             -   Deal a card using the dealCard method.
             -   Add the dealt card to the playedCards ArrayList.
@@ -99,8 +99,27 @@ The game will be broken down in to the following sections:
             -   Check if the last two cards in playedCards have the same symbol:
                 -   If yes, print "Snap! You win!" and end the game.
                 -   If no, continue the loop.
+        - If cards finish without matching, then end the game.
 
 4.  Two-player game with a Timer
+-   Create a Player CLASS 
+    -   Fields/Variables
+        -   String type to store name
+    -   CONSTRUCTOR Snap(String name):
+        -   this.name = name to refer to the object
+    -   Getters / Setters
+        -   getter for the name
+
+-   In the Snap CLASS
+    -   Fields/Variables
+        -   Add a player variable
+        -   Add a boolean to for the snapOpportunity
+        -   Add a timer variable ?
+    -   CONSTRUCTOR Snap(String name):
+        -   Add this.player = player
+    - ???
+5. Extras
+- Multiple rounds with a score counter. (Best of 5 or 7 or x games)
 
 ## ⚠️ Challenges Encountered
 
