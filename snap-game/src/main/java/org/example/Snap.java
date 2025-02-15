@@ -6,10 +6,9 @@ public class Snap extends CardGame {
     private Card previousCard; // Stores the card that has just been played
 
     // Constructor -
-    public Snap(int numberOfDecks) {
-        super("SnapGame", numberOfDecks);
+    public Snap(String name) {
+        super(name);
          // Calls the super/parent class constructor
-//        shuffleDeck(); // Shuffle the deck at the start of the game
     } // end constructor
 
     public void initialiseGame() {
@@ -36,13 +35,8 @@ public class Snap extends CardGame {
             // Display the dealt card
             System.out.println("Dealt card: " + currentCard);
 
-            if (previousCard != null ) {
-                System.out.printf("Prev Card symb: %s , Curr card sym: %s ", previousCard.getSymbol(), dealCard().getSymbol());}
-            // Check if currentCard matches the previous playedCard
-            if (previousCard != null && currentCard.getSymbol().equals(dealCard().getSymbol())) {
-
-
-                // was getting nothing in scanner when i didn't have first condition
+            if (previousCard != null && currentCard.getSymbol().equals(previousCard.getSymbol())) {
+                // was getting nothing in scanner when I didn't have first condition
                 System.out.println("SNAP! You win!");
                 scanner.close();
             }

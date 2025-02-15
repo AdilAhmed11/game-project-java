@@ -105,19 +105,32 @@ The game will be broken down in to the following sections:
 -   Create a Player CLASS 
     -   Fields/Variables
         -   String type to store name
+        -   int type to store the score. Score starts at 0.
     -   CONSTRUCTOR Snap(String name):
         -   this.name = name to refer to the object
+        -   this.score = score to refer to the object
     -   Getters / Setters
         -   getter for the name
+        -   getter for the score
+    -   Method to increment the score
+        -   doesn't return, so void
+    -   Method to display score for the player???
+        -   returns name and score
 
 -   In the Snap CLASS
     -   Fields/Variables
-        -   Add a player variable
+        -   Add a player1 and player 2 variable
         -   Add a boolean to for the snapOpportunity
-        -   Add a timer variable ?
-    -   CONSTRUCTOR Snap(String name):
-        -   Add this.player = player
-    - ???
+        -   Add a timer variable for the 2-second limit
+    -   CONSTRUCTOR Snap(String name): 
+        - Add this.player = player (for player1 and 2)
+    -   playGame() method:
+        -   Alternate between player1 and player2
+            -   player1's turn: 
+                -   Same as previous method (deal card, check card to match)
+                - THEN if snap opportunity, change it to true and have condition for 2 second timer.
+            -   player2's turn...
+
 5. Extras
 - Multiple rounds with a score counter. (Best of 5 or 7 or x games)
 

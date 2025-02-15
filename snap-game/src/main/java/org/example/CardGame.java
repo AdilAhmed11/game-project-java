@@ -8,16 +8,13 @@ public class CardGame {
     // Create the fields for the CardGame class
     private ArrayList<Card> deckOfCards; // Field to store the deck of cards
     private String name;
-    private int numberOfDecks;
-
 
     // Constructor - A special method to initialise objects.
     // Initialising deckOfCards array list AND the populateDeck method below
-    public CardGame(String name, int numberOfDecks) {
+    public CardGame(String name) {
         this.deckOfCards = new ArrayList<>();
         this.name = name;
-        this.numberOfDecks = 1;
-//        populateDeck(); // Populate the deck when the game is created
+        populateDeck(); // Populate the deck when the game is created
     }
 
     // Method to populate the deck
@@ -87,8 +84,3 @@ public class CardGame {
         return deckOfCards;
     }
 }
-
-
-
-
-

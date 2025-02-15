@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Creating a new CardGame object/instance called snapGame from the CardGame constructor using the new keyword.
-        Snap snapGame = new Snap(7);
+        Snap snapGame = new Snap("snap");
 
 //        // Using the new object 'snapGame' calling the getDeck() method to see if i get a deck.
 //        snapGame.getDeck();
