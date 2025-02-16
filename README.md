@@ -130,6 +130,12 @@ The game will be broken down in to the following sections:
                 -   Same as previous method (deal card, check card to match)
                 - THEN if snap opportunity, change it to true and have condition for 2 second timer.
             -   player2's turn...
+    -   Scanner. write "snap"
+    -   Update the card.
+        - If snap, then reset previous card, if not current card is previous crad.
+    -   Print out final score
+
+      
 
 5. Extras
 - Multiple rounds with a score counter. (Best of 5 or 7 or x games)

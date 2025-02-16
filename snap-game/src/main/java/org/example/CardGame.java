@@ -13,7 +13,7 @@ public class CardGame {
     // Initialising deckOfCards array list AND the populateDeck method below
     public CardGame(String name) {
         this.deckOfCards = new ArrayList<>();
-        this.name = name;
+        this.name = this.name;
         populateDeck(); // Populate the deck when the game is created
     }
 

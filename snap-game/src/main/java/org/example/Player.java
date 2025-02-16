@@ -24,4 +24,10 @@ public class Player {
     public void incrementScore() {
         score ++;
     }
+
+    // Method to describe player and score
+    @Override
+    public String toString() {
+        return name + "(Score: " + score + ")";
+    }
 }
