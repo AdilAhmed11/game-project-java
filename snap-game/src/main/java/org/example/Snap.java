@@ -63,7 +63,11 @@ public class Snap extends CardGame {
 
                 // Check if the player types "snap" in time
                 String input = scanner.nextLine();
-                if (snapOpportunity && input.equalsIgnoreCase("snap")) {
+                if (snapOpportunity && input.equalsIgnoreCase("snap snap")) {
+                    currentPlayer.incrementScore();
+                    currentPlayer.incrementScore(); // do it twice to add 2 points
+                    System.out.println("DOUBLE SNAP! " + currentPlayer.getName() + " wins 2 points@");
+                } else if (snapOpportunity && input.equalsIgnoreCase("snap")) {
                     System.out.println(currentPlayer.getName() + " wins the round!");
                     currentPlayer.incrementScore();
                     snapOpportunity = false;
@@ -85,9 +89,9 @@ public class Snap extends CardGame {
 
         // Determine the winner
         if (player1.getScore() > player2.getScore()) {
-            System.out.println(player1.getName() + " wins the game!");
+            System.out.println("🎉🎉🎉 " + player1.getName() + " wins the game! 🎉🎉🎉");
         } else if (player2.getScore() > player1.getScore()) {
-            System.out.println(player2.getName() + " wins the game!");
+            System.out.println("🎉🎉🎉 " + player2.getName() + " wins the game! 🎉🎉🎉");
         } else {
             System.out.println("It's a tie!");
         }
