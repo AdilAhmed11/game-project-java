@@ -26,7 +26,6 @@ public class Player {
     }
 
     // Method to describe player and score
-    @Override
     public String toString() {
         return name + "(Score: " + score + ")";
     }

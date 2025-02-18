@@ -59,14 +59,14 @@ public class Snap extends CardGame {
                             snapOpportunity = false;
                         }
                     }
-                }, 2000); // 2 seconds
+                }, 5000); // 2 seconds
 
                 // Check if the player types "snap" in time
                 String input = scanner.nextLine();
-                if (snapOpportunity && input.equalsIgnoreCase("snap snap")) {
+                if (snapOpportunity && input.equalsIgnoreCase("snapsnap")) {
                     currentPlayer.incrementScore();
                     currentPlayer.incrementScore(); // do it twice to add 2 points
-                    System.out.println("DOUBLE SNAP! " + currentPlayer.getName() + " wins 2 points@");
+                    System.out.println("DOUBLE SNAP! " + currentPlayer.getName() + " wins 2 points");
                 } else if (snapOpportunity && input.equalsIgnoreCase("snap")) {
                     System.out.println(currentPlayer.getName() + " wins the round!");
                     currentPlayer.incrementScore();

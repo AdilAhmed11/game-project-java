@@ -13,7 +13,20 @@ The following are links to the repo and game:
 
 ## 💾 Download it to play locally - Instructions
 
-...
+### Download the Repository
+
+Open you terminal.
+Navigate to where you'd like to download the game to (e.g., Documents, Desktop, etc)
+Clone the repository using Git.
+
+### Run the Game
+
+Use your preferred IDE (IntelliJ IDEA, Eclipse, etc...) to open the file
+Locate the Main.java file and run it.
+
+### Enjoy
+
+Play the Game and have fun!
 
 ## 🎮 Game Description
 
@@ -89,7 +102,7 @@ The game will be broken down in to the following sections:
 
         -   Call the superclass constructor to initialise the name and deck.
         -   Shuffle the deck at initialisation.
-        
+
     -   METHOD playGame():
         -   For Loop until the game ends:
             -   Wait for the user to press Enter (simulate a turn).
@@ -99,10 +112,12 @@ The game will be broken down in to the following sections:
             -   Check if the last two cards in playedCards have the same symbol:
                 -   If yes, print "Snap! You win!" and end the game.
                 -   If no, continue the loop.
-        - If cards finish without matching, then end the game.
+        -   If cards finish without matching, then end the game.
 
 4.  Two-player game with a Timer
--   Create a Player CLASS 
+
+-   Create a Player CLASS
+
     -   Fields/Variables
         -   String type to store name
         -   int type to store the score. Score starts at 0.
@@ -122,23 +137,22 @@ The game will be broken down in to the following sections:
         -   Add a player1 and player 2 variable
         -   Add a boolean to for the snapOpportunity
         -   Add a timer variable for the 2-second limit
-    -   CONSTRUCTOR Snap(String name): 
-        - Add this.player = player (for player1 and 2)
+    -   CONSTRUCTOR Snap(String name):
+        -   Add this.player = player (for player1 and 2)
     -   playGame() method:
         -   Alternate between player1 and player2
-            -   player1's turn: 
+            -   player1's turn:
                 -   Same as previous method (deal card, check card to match)
-                - THEN if snap opportunity, change it to true and have condition for 2 second timer.
+                -   THEN if snap opportunity, change it to true and have condition for 2 second timer.
             -   player2's turn...
     -   Scanner. write "snap"
     -   Update the card.
-        - If snap, then reset previous card, if not current card is previous crad.
+        -   If snap, then reset previous card, if not current card is previous crad.
     -   Print out final score
 
-      
-
 5. Extras
-- Multiple rounds with a score counter. (Best of 5 or 7 or x games)
+
+-   Multiple rounds with a score counter. (Best of 5 or 7 or x games)
 
 ## ⚠️ Challenges Encountered
 
